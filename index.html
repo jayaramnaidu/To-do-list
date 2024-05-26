@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="fontawesome.css">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="box">
+    <p class="label">to-do-list</p>
+    <input type="text" class="text">
+    <p class="alert">please enter some todo task</p>
+    <!-- <div class="note">
+        <ul>
+            <li>hiii
+   <i  class="open fa fa-times"  ></i>
+            </li>
+    
+        </ul> -->
+       
+    </div>
+   </div>
+    <script>
+     const textinput = document.querySelector(".text");
+     const box1 = document.querySelector(".box");
+   
+     try {
+     textinput.addEventListener("keyup",function(event){
+        if(event.key == "Enter"){
+    if(this.value == ""){
+        const alerterror = document.getElementsByClassName("alert")
+        for(let i = 0; i < alerterror.length; i++) {
+            alerterror[i].classList.add("error");
+        }
+    }else{
+        const alerterror = document.getElementsByClassName("alert")
+        for(let i = 0; i < alerterror.length; i++) {
+            alerterror[i].classList.remove("error");
+        }
+        const valuetext = this.value;
+        
+        detanote(valuetext)
+        this.value = ""
+        localStorage.setItem("note",JSON.stringify(valuetext))
+    }
+}
+
+     })
+    } catch (error) {
+            console.log("failed to save data in localstorage")
+        }
+     const detanote = (item) => {
+        const note = document.createElement("div");
+        note.classList.add("note")
+        note.innerHTML = `
+        <ul>
+            <li>${item}
+   <i class="open fa fa-times" ></i>
+            </li>
+    
+        </ul>
+        `;
+       
+     note.querySelector("i").addEventListener("click",function(){
+        note.remove()
+        
+       })
+       
+    box1.appendChild(note)
+
+
+     }
+     
+    </script>
+</body>
+</html>

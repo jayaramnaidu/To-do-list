@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(90deg,blue,#000000);
+    display: grid;
+    place-items: center;
+
+}
+.box{
+    width: 500px;
+    /* height: 500px; */
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 1px white;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+
+    padding: 15px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 lightseagreen,
+    0 0 30px 20px lightseagreen,
+    ;
+}
+.box input{
+    width: 100%;
+    padding: 5px;
+    
+}
+.box input:focus{
+    outline-color: blue;
+
+}
+.label{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: azure;
+    margin-bottom: 5px;
+}
+.alert{
+    opacity: 0;
+    color: white;
+}
+.error{
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: azure;
+    margin: 5px 0;
+}
+.note{
+    width: 100%;
+    background-color: transparent;
+    margin-top: 15px;
+    border-radius: 5px;
+    
+}
+.note ul{
+    position: relative;
+}
+.note ul li{
+    list-style: none;
+    user-select: none;
+    box-shadow: 0 1px 5px blue;
+    padding: 5px 15px;
+    color: aliceblue;
+}
+.note ul li .open{
+    position: absolute;
+    right: 0;
+    padding-right: 10px ;
+}
+@media screen and (min-width: 300px) {
+   .box{
+    width: 80%;
+   }
+   .label{
+    font-size: 15px;
+   }
+  }
+@media screen and (min-width: 150px) {
+   .box{
+    width: 80%;
+   }
+   .label{
+    font-size: 15px;
+   }
+  }
+@media screen and (min-width: 600px) {
+   .box{
+    width: 60%;
+   }
+   .label{
+    font-size: 20px;
+   }
+  }
+@media screen and (min-width: 1000px) {
+   .box{
+    width: 50%;
+   }
+   .label{
+    font-size: 25px;
+   }
+  }
